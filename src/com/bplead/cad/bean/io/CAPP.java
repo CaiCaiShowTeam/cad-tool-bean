@@ -3,7 +3,7 @@ package com.bplead.cad.bean.io;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bplead.cad.bean.annotation.DisplayIngnore;
+import com.bplead.cad.bean.annotation.DisplayIgnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
@@ -35,10 +35,10 @@ public class CAPP implements AttachmentModel {
 	private String manuRegulationName;
 	@JacksonXmlProperty(localName = "attachment")
 	private List<Attachment> attachments = new ArrayList<Attachment>();
-	@DisplayIngnore
+	@DisplayIgnore
 	@JacksonXmlProperty(localName = "kpmc")
 	private String cardName;
-	@DisplayIngnore
+	@DisplayIgnore
 	@JacksonXmlProperty(localName = "clcc")
 	private String materialSize;
 	@JacksonXmlElementWrapper(localName = "partlist")

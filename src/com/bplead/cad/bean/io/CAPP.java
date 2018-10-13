@@ -3,43 +3,47 @@ package com.bplead.cad.bean.io;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bplead.cad.bean.annotation.DisplayIngnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
 
 @JacksonXmlRootElement(localName = "plminfo")
 public class CAPP implements AttachmentModel {
 
 	private static final long serialVersionUID = -6586845584942195940L;
-	@JacksonXmlProperty(localName = "attachment")
-	private List<Attachment> attachments = new ArrayList<Attachment>();
-	@JacksonXmlProperty(localName = "kpmc")
-	private String cardName;
+	@JacksonXmlProperty(localName = "cpmc")
+	private String productName;
+	@JacksonXmlProperty(localName = "ljmc")
+	private String partName;
 	@JacksonXmlProperty(localName = "fcmc")
 	private String factoryName;
 	@JacksonXmlProperty(localName = "jdecode")
 	private String jdeNum;
-	@JacksonXmlProperty(localName = "GYGCMC")
-	private String manuRegulationName;
+	@JacksonXmlProperty(localName = "cpdh")
+	private String productNum;
+	@JacksonXmlProperty(localName = "ljdh")
+	private String partNum;
+	@JacksonXmlProperty(localName = "gylxlx")
+	private String mpmPlanType;
+	@JacksonXmlProperty(localName = "gy")
+	private String pageSize;
 	@JacksonXmlProperty(localName = "clph")
 	private String materialBrandNum;
+	@JacksonXmlProperty(localName = "GYGCMC")
+	private String manuRegulationName;
+	@JacksonXmlProperty(localName = "attachment")
+	private List<Attachment> attachments = new ArrayList<Attachment>();
+	@DisplayIngnore
+	@JacksonXmlProperty(localName = "kpmc")
+	private String cardName;
+	@DisplayIngnore
 	@JacksonXmlProperty(localName = "clcc")
 	private String materialSize;
 	@JacksonXmlElementWrapper(localName = "partlist")
 	@JacksonXmlProperty(localName = "partinfo")
 	private List<MPMPart> mpmParts = new ArrayList<MPMPart>();
-	@JacksonXmlProperty(localName = "gylxlx")
-	private String mpmPlanType;
-	@JacksonXmlProperty(localName = "gy")
-	private String pageSize;
-	@JacksonXmlProperty(localName = "ljmc")
-	private String partName;
-	@JacksonXmlProperty(localName = "ljdh")
-	private String partNum;
-	@JacksonXmlProperty(localName = "cpmc")
-	private String productName;
-	@JacksonXmlProperty(localName = "cpdh")
-	private String productNum;
 
 	@Override
 	public List<Attachment> getAttachments() {

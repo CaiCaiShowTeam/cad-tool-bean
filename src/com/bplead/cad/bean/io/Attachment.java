@@ -11,9 +11,9 @@ public class Attachment implements Serializable {
 	private String absolutePath;
 	private String name;
 	private boolean primary;
-	
+
 	public Attachment() {
-		
+
 	}
 
 	public Attachment(File file, boolean primary) {

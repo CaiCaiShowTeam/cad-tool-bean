@@ -31,7 +31,6 @@ public class MPMPart implements Serializable, DetailModel {
 		return jdeNum;
 	}
 
-
 	public String getOperationNum() {
 		return operationNum;
 	}

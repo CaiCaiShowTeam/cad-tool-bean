@@ -3,6 +3,7 @@ package com.bplead.cad.bean.client;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import priv.lee.cad.model.ServerClientTemporary;
+import priv.lee.cad.util.ObjectUtils;
 import priv.lee.cad.util.StringUtils;
 
 @JacksonXmlRootElement(localName = "temporary")
@@ -31,7 +32,8 @@ public class Temporary implements ServerClientTemporary {
 
 	@Override
 	public String getServer() {
-		return (preference == null || StringUtils.isEmpty(preference.getServer())) ? "" : preference.getServer();
+		return (ObjectUtils.isEmpty(preference) || StringUtils.isEmpty(preference.getServer())) ? ""
+				: preference.getServer();
 	}
 
 	@Override
